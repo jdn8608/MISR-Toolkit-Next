@@ -21,6 +21,10 @@ are permitted when the license conditions are satisfied. In summary:
 3. the names of Caltech, JPL, NASA, or contributors may not be used to endorse
    or promote derived products without prior written permission.
 
+## Non-endorsement
+
+This community-maintained fork is derived from the MISR Toolkit. References to NASA, JPL, Caltech, MISR, or related missions are for attribution and compatibility context only. NASA, JPL, Caltech, and their affiliates do not necessarily sponsor, authorize, or endorse this fork, its documentation, tutorials, or downstream outputs.
+
 ## Disclaimer
 
 The software is provided "as is" without express or implied warranties,
