@@ -71,6 +71,14 @@ setup (name = 'MisrToolkit',
        version = '1.5.1',
        author="MISR Project",
        license = 'BSD-3-Clause',
-       long_description='Python interface to MISR Toolkit',
+       long_description=(
+           'Python interface to MISR Toolkit. '
+           'This community-maintained fork is derived from the MISR Toolkit. '
+           'References to NASA, JPL, Caltech, MISR, or related missions are '
+           'for attribution and compatibility context only. NASA, JPL, '
+           'Caltech, and their affiliates do not necessarily sponsor, '
+           'authorize, or endorse this fork, its documentation, tutorials, '
+           'or downstream outputs.'
+       ),
        long_description_content_type="text/markdown",
        url="https://github.com/nasa/Misr-Toolkit",)
