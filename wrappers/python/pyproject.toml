@@ -1,0 +1,25 @@
+[build-system]
+requires = [
+    "setuptools>=68",
+    "wheel",
+    "numpy>=1.26,<3",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MisrToolkit"
+version = "1.5.1"
+description = "Python interface to MISR Toolkit"
+readme = { text = "Python interface to MISR Toolkit. This community-maintained fork is derived from the MISR Toolkit. References to NASA, JPL, Caltech, MISR, or related missions are for attribution and compatibility context only. NASA, JPL, Caltech, and their affiliates do not necessarily sponsor, authorize, or endorse this fork, its documentation, tutorials, or downstream outputs.", content-type = "text/markdown" }
+requires-python = ">=3.9"
+license = "BSD-3-Clause"
+authors = [
+    { name = "MISR Project" },
+]
+dependencies = [
+    "numpy>=1.26,<3",
+]
+
+[project.urls]
+Homepage = "https://github.com/nasa/Misr-Toolkit"
+Repository = "https://github.com/nasa/Misr-Toolkit"

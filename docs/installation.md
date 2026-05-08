@@ -14,17 +14,39 @@ The existing README and Doxygen front page describe testing on:
 The core interface is C. Python and IDL bindings are also available. Python 2.7
 support is deprecated because Python 2.7 has reached end of life.
 
-## Python binary installation
+## Python installation
 
-For Python users, the most convenient path is the published wheel from PyPI:
+For Python users, the most convenient path is a published wheel from PyPI or a
+wheel attached to a GitHub release:
 
 ```bash
 python -m pip install -U pip
-python -m pip install -U wheel numpy
 python -m pip install -U MisrToolkit
 ```
 
-Downloadable wheel distributions may also be attached to GitHub releases.
+The Python wrapper now declares its build backend and NumPy build dependency in
+`wrappers/python/pyproject.toml`, so modern installers install build
+requirements automatically when building from source. If no compatible wheel is
+available, install the native HDF-EOS/HDF dependencies and build the core MISR
+Toolkit library first, then build or install the wrapper from the Python wrapper
+directory:
+
+```bash
+# From the repository root, after configuring the HDF-EOS/HDF environment.
+make lib
+export MTK_SOURCE_ROOT=$PWD
+cd wrappers/python
+python -m pip install -U build
+python -m build
+python -m pip install dist/*.whl
+```
+
+For editable local development after the native library is built, use:
+
+```bash
+cd wrappers/python
+python -m pip install -e .
+```
 
 ## IDL binary installation
 

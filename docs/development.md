@@ -47,6 +47,44 @@ Doxygen docs, and distribution packages. Common targets include:
 Some tests require the MISR testdata package and configured external
 dependencies.
 
+
+## Python wrapper packaging
+
+The Python wrapper is a PEP 517 project rooted at `wrappers/python`. Static
+package metadata and build requirements live in `wrappers/python/pyproject.toml`;
+`setup.py` remains responsible for declaring the native extension module.
+
+Before building Python distributions, configure the HDF-EOS/HDF environment and
+build the native MISR Toolkit library from the repository root:
+
+```bash
+make lib
+export MTK_SOURCE_ROOT=$PWD
+```
+
+`MTK_SOURCE_ROOT` lets PEP 517 isolated builds locate the already-built native
+MISR Toolkit library and headers, including when `python -m build` builds the
+wheel from the source distribution. Then build and smoke-install the Python
+wheel from the wrapper directory:
+
+```bash
+cd wrappers/python
+python -m pip install -U build
+python -m build
+python -m pip install --force-reinstall dist/*.whl
+```
+
+For legacy in-tree wrapper builds and tests, the top-level Makefile targets are
+still available:
+
+```bash
+make python
+make testpython
+```
+
+Some Python tests require the MISR testdata package and configured external
+dependencies.
+
 ## Documentation maintenance guidelines
 
 - Keep Markdown pages concise, task-oriented, and reviewed by maintainers.
