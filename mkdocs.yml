@@ -1,0 +1,51 @@
+site_name: MISR Toolkit Next
+site_description: Hand-maintainable documentation for the MISR Toolkit interfaces and data-access workflows.
+site_url: https://nasa.github.io/MISR-Toolkit-Next/
+repo_url: https://github.com/nasa/MISR-Toolkit-Next
+repo_name: nasa/MISR-Toolkit-Next
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: deep orange
+
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - Installation: installation.md
+  - Architecture: architecture.md
+  - Interfaces:
+      - Python API: python-api.md
+      - C API: c-api.md
+  - Data products: data-products.md
+  - Tutorials:
+      - Overview: tutorials/index.md
+  - Development: development.md
+  - License and disclaimer: license-and-disclaimer.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+strict: true
