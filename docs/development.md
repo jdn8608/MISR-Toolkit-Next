@@ -56,3 +56,11 @@ dependencies.
   references.
 - Update `mkdocs.yml` navigation whenever adding or renaming a page.
 - Run `mkdocs build --strict` before opening a pull request.
+
+## Dependency modernization
+
+Dependency policy, package-manager feasibility notes, Windows binary guidance,
+and the compatibility matrix are maintained in
+[Dependency modernization](development/dependencies.md). Update that page along
+with `README`, `docs/installation.md`, and Python packaging metadata whenever a
+minimum supported dependency changes.

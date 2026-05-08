@@ -1,5 +1,4 @@
-from setuptools import setup
-from distutils.core import Extension
+from setuptools import setup, Extension
 import os
 import numpy
 import platform
@@ -71,14 +70,20 @@ setup (name = 'MisrToolkit',
        version = '1.5.1',
        author="MISR Project",
        license = 'BSD-3-Clause',
-       long_description=(
-           'Python interface to MISR Toolkit. '
-           'This community-maintained fork is derived from the MISR Toolkit. '
-           'References to NASA, JPL, Caltech, MISR, or related missions are '
-           'for attribution and compatibility context only. NASA, JPL, '
-           'Caltech, and their affiliates do not necessarily sponsor, '
-           'authorize, or endorse this fork, its documentation, tutorials, '
-           'or downstream outputs.'
-       ),
+       python_requires=">=3.10,<3.14",
+       install_requires=["numpy>=1.23.5"],
+       long_description='Python interface to MISR Toolkit',
        long_description_content_type="text/markdown",
-       url="https://github.com/nasa/Misr-Toolkit",)
+       url="https://github.com/nasa/Misr-Toolkit",
+       classifiers=[
+           "Development Status :: 4 - Beta",
+           "Intended Audience :: Science/Research",
+           "License :: OSI Approved :: BSD License",
+           "Programming Language :: C",
+           "Programming Language :: Python :: 3",
+           "Programming Language :: Python :: 3.10",
+           "Programming Language :: Python :: 3.11",
+           "Programming Language :: Python :: 3.12",
+           "Programming Language :: Python :: 3.13",
+           "Topic :: Scientific/Engineering :: Atmospheric Science",
+       ],)
