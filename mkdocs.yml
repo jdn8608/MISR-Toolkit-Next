@@ -29,7 +29,9 @@ nav:
   - Data products: data-products.md
   - Tutorials:
       - Overview: tutorials/index.md
-  - Development: development.md
+  - Development:
+      - Overview: development.md
+      - Dependency modernization: development/dependencies.md
   - License and disclaimer: license-and-disclaimer.md
 
 markdown_extensions:

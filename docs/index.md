@@ -42,6 +42,8 @@ MISR Toolkit can:
 - [Data products](data-products.md) explains how the toolkit views MISR files,
   grids, fields, paths, blocks, and metadata.
 - [Tutorials](tutorials/index.md) collects short task-oriented examples.
+- [Dependency modernization](development/dependencies.md) records the current
+  native-library and Python compatibility baseline for maintainers.
 
 ## Legacy references
 

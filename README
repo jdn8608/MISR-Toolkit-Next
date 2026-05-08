@@ -33,30 +33,33 @@ Offline documentation packages are also available for download on the github rel
 Third Party Library Dependencies
 --------------------------------
 
-The MISR Toolkit depends on the following libraries. Download links are provide
-for your reference, but it is preferred to use the script "download_libraries"
-in the source bundle "scripts" directory. Python users will still need to
-download NumPy and install it according to NumPy instructions.
+The MISR Toolkit depends on HDF-EOS2/HDF4 plus related scientific data and
+compression libraries. The current modernization baseline for new builds is:
 
-   - HDF-EOS2.18v1.00 (https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos/previous_releases)
-   - HDF4.2.10        (https://support.hdfgroup.org/ftp/HDF/releases/HDF4.2.10/src)
-   - hdf5-1.8.16      (https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.16/src)
-   - netcdf-4.4.0     (ftp://ftp.unidata.ucar.edu/pub/netcdf/)
-   - jpegsrc.v6b      (https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos/previous_releases)
-   - zlib-1.2.5       (https://observer.gsfc.nasa.gov/ftp/edhs/hdfeos/previous_releases)
-   - NumPy 1.15 or later Python module (http://www.numpy.org/)
+   - HDF-EOS2 2.20 or later
+   - HDF4 4.2.15 or later
+   - HDF5 1.10.11 or later
+   - netCDF-C 4.9.2 or later
+   - libjpeg-turbo 2.1.5 or later, or IJG JPEG v9e or later
+   - zlib 1.2.13 or later
+   - NumPy 1.23.5 or later for Python source builds
+
+The legacy scripts/download_libraries and scripts/install_hdf+hdfeos workflow
+still downloads older known-good sources for historical release reproduction.
+For platform install paths, conda-forge and Homebrew feasibility, Windows binary
+policy, and the compatibility matrix, see docs/development/dependencies.md.
 
 
 Binary Installation Instructions
 --------------------------------
 
-Binary installations that do not require compilation are now available for Python 3.6, IDL, and C library users
-on Linux, Mac OS X, and Windows.
-Python 2.7 binaries are also available but deprecated on Linux and Mac OS X.
+Binary installations that do not require compilation may be available for Python, IDL, and C library users
+on Linux, macOS, and Windows. New Python package builds target Python 3.10, 3.11, and 3.12.
+Python 2.7 and Python 3.6-era binaries are retained only for historical release reproduction.
 
 For Python users, the most convenient option is downloading MISR Toolkit directly from PyPI using pip.
 - python -m pip install -U pip
-- python -m pip install -U wheel numpy
+- python -m pip install -U wheel "numpy>=1.23.5"
 - python -m pip install -U MisrToolkit
 
 A downloadable python binary wheel distribution is also available on the releases page.
@@ -69,14 +72,15 @@ to set the IDL_DLM_PATH enviornment variable or use IDL's PREF_SET to tell IDL w
 Source Installation Instructions
 --------------------------------
 
-Linux and MacOS X
+Linux and macOS
 
-The recommended location for the HDF-EOS/HDF libraries and the MISR Toolkit is /usr/local/hdfeoslibs
+The recommended legacy location for the HDF-EOS/HDF libraries and the MISR Toolkit is /usr/local/hdfeoslibs
 and /usr/local/Mtk-1.5.X respectively, because this location provides convenient access for multiple user
-accounts.  It is not necessary, however, to install in /usr/local. The MISR Toolkit and HDF-EOS can be
-installed anywhere.  Of course installing in /usr/local requires root or sudo privileges. Use the sudo
-commands below if you are a sudoer or simply become root before installing the HDF-EOS/HDF libraries
-and before the "make install" step for the MISR Toolkit.
+accounts. It is not necessary, however, to install in /usr/local. Conda prefixes, Homebrew prefixes on
+macOS, /opt/misr-deps, and other custom locations are supported when the HDFEOS_INC, HDFEOS_LIB,
+HDFINC, HDFLIB, HDF5INC, HDF5LIB, NCINC, NCLIB, JPEGINC, JPEGLIB, GCTPINC, and GCTPLIB
+environment variables point to the matching headers and libraries. Installing into /usr/local usually
+requires root or sudo privileges.
 
 1) Create a working directory
 
@@ -228,7 +232,7 @@ and before the "make install" step for the MISR Toolkit.
    site-packages directory
 
    cd Mtk-src-1.5.X/wrappers/python
-   sudo python setup.py install
+   python -m pip install .
    setenv LD_LIBRARY_PATH $MTK_INSTALLDIR/lib
 
 9) Optional - After installing the Mtk_tmp directory, it's contents is
