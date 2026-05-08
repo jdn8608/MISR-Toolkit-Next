@@ -21,6 +21,11 @@ The MISR Toolkit has been tested on Linux CentOS 7, Mac OS X 10.14.6 and Windows
 It's core interface is C. There are also bindings for Python (2.7 and 3.x supported) and IDL.
 Note that Python 2.7 is end of life and deprecated in MISR Toolkit.
 
+Non-endorsement
+---------------
+
+This community-maintained fork is derived from the MISR Toolkit. References to NASA, JPL, Caltech, MISR, or related missions are for attribution and compatibility context only. NASA, JPL, Caltech, and their affiliates do not necessarily sponsor, authorize, or endorse this fork, its documentation, tutorials, or downstream outputs.
+
 
 Complete documentation and function reference
 ---------------------------------------------

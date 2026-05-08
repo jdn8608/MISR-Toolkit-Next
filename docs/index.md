@@ -32,6 +32,10 @@ MISR Toolkit can:
     support SOM projections. Confirm your downstream tool support before
     relying on ENVI output for SOM-projected data.
 
+## Non-endorsement
+
+This community-maintained fork is derived from the MISR Toolkit. References to NASA, JPL, Caltech, MISR, or related missions are for attribution and compatibility context only. NASA, JPL, Caltech, and their affiliates do not necessarily sponsor, authorize, or endorse this fork, its documentation, tutorials, or downstream outputs.
+
 ## Start here
 
 - [Getting started](getting-started.md) explains the main user paths.
